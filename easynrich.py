@@ -35,7 +35,6 @@ class Dns2nrich:
 			for ip_address in self.ip_list:
 				file.write(f'{ip_address}\r\n')
 		subprocess.Popen(['nrich', 'ip_addresses.txt'])
-		sys.exit(0)
 
 def main():
 	'''Main'''
