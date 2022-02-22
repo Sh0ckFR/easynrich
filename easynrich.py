@@ -14,7 +14,7 @@ class Dns2nrich:
 
 	def launch_subfinder(self, domain):
 		'''Start subfinder on the domain'''
-		subprocess.Popen(['subfinder', '-d', domain, '-o', 'subfinder.txt'])
+		subprocess.Popen(['subfinder', '-d', domain, '-o', 'subfinder.txt']).wait()
 
 	def get_ip_addresses(self):
 		'''Get the IP addresses from the subdomains'''
@@ -34,7 +34,7 @@ class Dns2nrich:
 		with open('ip_addresses.txt', 'w') as file:	
 			for ip_address in self.ip_list:
 				file.write(f'{ip_address}\r\n')
-		subprocess.Popen(['nrich', 'ip_addresses.txt'])
+		subprocess.Popen(['nrich', 'ip_addresses.txt']).wait()
 
 def main():
 	'''Main'''
