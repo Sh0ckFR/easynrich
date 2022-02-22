@@ -32,7 +32,7 @@ class Dns2nrich:
 						pass
 
 	def launch_nrich(self):
-		'''Start nrich on the ip addresses of the domains list'''
+		'''Start nrich on the IP addresses from the subdomains'''
 		print(f'[+] Start nrich on the IP addresses from the subdomains...')
 		with open('ip_addresses.txt', 'w') as file:	
 			for ip_address in self.ip_list:
