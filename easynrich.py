@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 '''
-Script to launch shodan-nrich on the subdomains of a specified domain
+Script to launch shodan-nrich on the subdomains of a specified domain (domain.com) or a domains list (domains.txt)
 '''
 
+import os
 import sys
 import socket
 import subprocess
@@ -11,6 +12,8 @@ import subprocess
 class Dns2nrich:
 	def __init__(self):
 		self.ip_list = []
+		if os.path.exists('ip_addresses.txt'):
+			os.remove('ip_addresses.txt')
 
 	def launch_subfinder(self):
 		'''Start subfinder on the domain'''
@@ -54,7 +57,7 @@ class Dns2nrich:
 
 	def launch_nrich(self):
 		'''Start nrich on the IP addresses from the subdomains'''
-		with open('ip_addresses.txt', 'w') as file:	
+		with open('ip_addresses.txt', 'a') as file:	
 			for ip_address in self.ip_list:
 				file.write(f'{ip_address}\r\n')
 		subprocess.Popen(['nrich', 'ip_addresses.txt']).wait()
