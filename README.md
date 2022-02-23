@@ -11,5 +11,5 @@ Script to launch shodan-nrich on the subdomains of a specific domain or a domain
 
 ```
 python3 easynrich.py DOMAIN -> for a single domain
-python3 easynrich.py DOMAIN_LIST.TXT -> for multiple domains
+python3 easynrich.py DOMAINS_LIST.TXT -> for multiple domains
 ```
