@@ -1,8 +1,6 @@
 # EasyNrich
 
-Script to launch shodan-nrich on the subdomains of a specific domain
-
-I will add an option in few days to use a list of domains also
+Script to launch shodan-nrich on the subdomains of a specific domain or a domains list
 
 ## How to install
 
@@ -12,5 +10,6 @@ I will add an option in few days to use a list of domains also
 ## How to use
 
 ```
-python3 easynrich.py DOMAIN
+python3 easynrich.py DOMAIN -> for a single domain
+python3 easynrich.py DOMAIN_LIST.TXT -> for multiple domains
 ```
